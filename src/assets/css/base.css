@@ -1,0 +1,23 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  --font-size:14px;
+  --line-height:1.5;
+}
+
+header{
+  width: 100vw;
+  /* height: 125px; */
+  background-color: teal;
+  position: fixed;
+}
+
+body{
+  background-image: url("../imgs/glowingnight3.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
