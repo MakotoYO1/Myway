@@ -14,6 +14,7 @@ export default {
 #header_author{
   font-size: 30px;
   /* color: aliceblue; */
+  margin-right: 20px;
 }
 #header_author span{
   text-align: center;
