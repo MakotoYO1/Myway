@@ -14,6 +14,6 @@ export default {
 #leftcontent{
   width:10%;
   height: 100%;
-  background-color: white;
+  background-color: rgba(255, 255, 255,.6);
 }
 </style>

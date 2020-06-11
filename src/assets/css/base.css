@@ -1,20 +1,22 @@
 *{
   margin: 0;
   padding: 0;
+  outline: none;
 }
 
 body{
-  background-image: url("../imgs/landscape2.jpg");
+  background-image: url("~assets/imgs/backgrounds/landscape2.jpg");
   background-repeat: no-repeat;
   background-attachment:fixed;
   background-size: 100% 100%;
+  font-family: Tahoma, Arial, Helvetica, "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", 宋体, SimSun, STXihei, "华文细黑", sans-serif;
 }
 
 header{
   width: 100vw;
   position: fixed;
   top: 0;
-  background-color: rgba(116, 117, 155, .8);
+  background-color: rgba(116, 117, 155, .6);
 }
 
 footer{
@@ -26,7 +28,7 @@ footer{
 main{
   width: 95vw;
   height: 80vh;
-  background-color: teal;
+  /* background-color: teal; */
   margin:100px auto 0;
 }
 
