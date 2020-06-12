@@ -1,14 +1,14 @@
 <template>
   <nav id="header_nav">
     <ul id="navs">
-      <li @click="onHomeClick">主页</li>
-      <li @click="onBlogClick">博客</li>
-      <li @click="onGameClick" id="games">
-        小游戏
+      <li><span @click="onHomeClick">主页</span></li>
+      <li><span @click="onBlogClick">博客</span></li>
+      <li id="games">
+        <span @click="onGameClick">小游戏</span>
         <nav-component>
           <template v-slot:otherlist>
             <ul>
-              <li>贪吃蛇</li>
+              <li @click="Snack">贪吃蛇</li>
               <li>2048</li>
             </ul>
           </template>
@@ -47,6 +47,11 @@ export default {
       this.$router.push({
         path: "/games"
       });
+    },
+    Snack(){
+      this.$router.push({
+        path:"/games/snake"
+      })
     }
   }
 };
@@ -72,6 +77,14 @@ export default {
   justify-content: center;
   align-items: center;
   position: relative;
+  border-radius: 10px;
+}
+#navs > li>span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   border-radius: 10px;
 }
 #navs > li::before {

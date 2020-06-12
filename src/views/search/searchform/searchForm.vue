@@ -6,7 +6,7 @@
       </div>
     </div>
     <div id="searchframe">
-      <form :action="objectWeb" role="search" method="get" target="blank" id="sform">
+      <form :action="objectWeb" role="search" method="get" target="_blank" id="sform">
         <input type="search" :name="webkey" id="searchinput" autocomplete="off" v-model="inputvalue" autofocus/>
         <div id="searchbutton">
           <button></button>
