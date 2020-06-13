@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   outline: none;
+
 }
 
 body{
@@ -27,7 +28,7 @@ footer{
 
 main{
   width: 95vw;
-  height: 80vh;
+  /* height: 80vh; */
   /* background-color: teal; */
   margin:100px auto 0;
 }
@@ -36,3 +37,4 @@ ul{
   display: flex;
   list-style: none;
 }
+

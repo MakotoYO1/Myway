@@ -8,8 +8,8 @@
         <nav-component>
           <template v-slot:otherlist>
             <ul>
-              <li @click="Snack">贪吃蛇</li>
-              <li>2048</li>
+              <li @click="Snake">贪吃蛇</li>
+              <li @click="Game2048">2048</li>
             </ul>
           </template>
         </nav-component>
@@ -48,9 +48,14 @@ export default {
         path: "/games"
       });
     },
-    Snack(){
+    Snake(){
       this.$router.push({
         path:"/games/snake"
+      })
+    },
+    Game2048(){
+      this.$router.push({
+        path:"/games/2048"
       })
     }
   }

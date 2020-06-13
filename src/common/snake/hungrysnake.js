@@ -8,7 +8,7 @@ export function Map(atom, xnum, ynum) {
   this.showg = document.createElement('div') //判断是否显示网格
   this.create = function () {
     this.canvas = document.createElement('div')
-    this.canvas.style.cssText = "border:solid 1px red;position:relative;background-color:white"
+    this.canvas.style.cssText = "border:solid 3px;position:relative;border-color:rgba(170, 106, 76,.6)"
     this.canvas.style.width = this.atom * this.xnum + "px"
     this.canvas.style.height = this.atom * this.ynum + "px"
     document.getElementById("snake").appendChild(this.canvas)
@@ -19,7 +19,7 @@ export function Map(atom, xnum, ynum) {
     for (let y = 0; y < this.ynum; y++) {
       for (let x = 0; x < this.xnum; x++) {
         let s = document.createElement("div")
-        s.style.cssText = "position:absolute;border:solid 1px silver;background-color:green"
+        s.style.cssText = "position:absolute;border:solid 1px silver;background-color:lightgreen"
         s.style.width = this.atom + "px"
         s.style.height = this.atom + "px"
         s.style.top = this.atom * y + "px"
@@ -44,9 +44,10 @@ Map.prototype.showgrid = function (isshow) {
 export function Food(map) {
   this.x = Math.floor(Math.random() * map.xnum)
   this.y = Math.floor(Math.random() * map.ynum)
+  this.foods=null
   this.display = function () {
     this.foods = document.createElement('div')
-    this.foods.style.cssText = "position:absolute;background-color:red"
+    this.foods.style.cssText = "position:absolute;background-color:#fecc11;clip-path:polygon(0 50%,50% 100%,100% 50%,50% 0)"
     this.foods.style.width = map.atom + "px"
     this.foods.style.height = map.atom + "px"
     this.foods.style.left = this.x * map.atom + "px"
@@ -73,13 +74,15 @@ export function Snake(map) {
         let s = document.createElement('div')
         //储存当前蛇段
         this.body[i].store = s
-        s.style.cssText = "position:absolute;background-color:blue"
+        s.style.cssText = "position:absolute;background-color:#e8b004"
         s.style.width = this.width + "px"
         s.style.height = this.height + "px"
         s.style.borderRadius="50%"
         s.style.left = this.body[i].x * this.width + "px"
         s.style.top = this.body[i].y * this.width + "px"
-
+        if(i==0){
+          s.style.backgroundColor="#f86b1d"
+        }
         map.canvas.appendChild(s)
       }
     }
@@ -123,7 +126,7 @@ export function Snake(map) {
       return -1         
     }
     //判断是否碰到自己
-    for (let i = 4; i < this.body.length; i++) {
+    for (let i = 3; i < this.body.length; i++) {
       if (this.body[0].x == this.body[i].x && this.body[0].y == this.body[i].y) {
         clearInterval(timer)
         alert(`吃自己啦，游戏结束`)

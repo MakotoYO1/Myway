@@ -13,13 +13,13 @@ export default {
 <style>
 #maincontent{
   width: 85%;
-  height: 100%;
+  height: 80vh;
   background-color:rgba(247, 229, 196, 0.8);
+  /* z-index: -1; */
+  /* position: relative; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
-p{
-  height: 800px;
-}
+
 </style>

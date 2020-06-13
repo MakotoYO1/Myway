@@ -4,7 +4,7 @@ const homeSearch = () => import('views/search/homeSearch')
 const homeBlogs = () => import('views/blogs/homeBlogs')
 const homeGames = () => import('views/games/homeGames')
 const gameSnake = () => import('views/games/snack/gameSnake')
-
+const game2048=()=>import('views/games/2048/game2048')
 
 
 Vue.use(VueRouter)
@@ -16,7 +16,7 @@ const routes = [
   },
   {
     path: "/home",
-    name: "home",
+    name: "homeSearch",
     meta: {
       title: "主页"
     },
@@ -24,7 +24,7 @@ const routes = [
   },
   {
     path: "/blog",
-    name: "blog",
+    name: "homeBlogs",
     meta: {
       title: "博客"
     },
@@ -32,24 +32,32 @@ const routes = [
   },
   {
     path: "/games",
-    name: "games",
+    name: "homeGames",
     meta: {
       title: "小游戏"
     },
     component: homeGames,
     children: [{
       path: "snake",
-      name: "snake",
+      name: "gameSnake",
       meta: {
         title: "贪吃蛇"
       },
       component: gameSnake
+    },
+    {
+      path:"2048",
+      name:"game2048",
+      meta:{
+        title:"2048"
+      },
+      component:game2048
     }]
   }
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes
 })
